@@ -57,8 +57,6 @@ Follow these steps to deploy the microservices architecture:
 
 ## Contributors
 
-- [Your Name](https://github.com/CanisCoder)
+- [Anand/CanisCoder](https://github.com/CanisCoder)
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
