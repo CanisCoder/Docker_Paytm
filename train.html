@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paytm Train Booking</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 20px;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .additional-services {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .additional-services a {
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .additional-services a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="/images/paytmtrain.png"
+        alt="paytm train"
+        style="width: 70%; margin-bottom: 20px"
+      />
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="from">From:</label>
+          <input type="text" id="from" name="from" required />
+        </div>
+        <div class="form-group">
+          <label for="to">To:</label>
+          <input type="text" id="to" name="to" required />
+        </div>
+        <div class="form-group">
+          <label for="departureDate">Departure Date:</label>
+          <input type="date" id="departureDate" name="departureDate" required />
+        </div>
+        <div class="form-group">
+          <label for="class">Class:</label>
+          <select id="class" name="class">
+            <option value="ac">AC</option>
+            <option value="non-ac">Non-AC</option>
+          </select>
+        </div>
+        <button type="submit">Search Train</button>
+      </form>
+      <div class="additional-services">
+        <a href="#">My Booking</a>
+        <a href="#">PNR Status</a>
+        <a href="#">Train Status</a>
+        <a href="#">Order Food</a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          console.log("Form submitted!");
+        });
+    </script>
+  </body>
+</html>

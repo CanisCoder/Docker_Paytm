@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paytm Movie UI</title>
+    <style>
+      /* CSS Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 20px;
+      }
+
+      .filters {
+        background-color: #19a3d1;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .movie-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+
+      .movie-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .movie-card:hover {
+        transform: scale(1.05);
+      }
+
+      .movie-card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .movie-title {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      .book-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        align-self: flex-end;
+        margin-top: auto;
+      }
+
+      .book-btn:hover {
+        background-color: #0056b3;
+      }
+
+      .filters h3 {
+        margin-bottom: 10px;
+      }
+
+      .filter-option {
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        .movie-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="/images/paytmmovie.png"
+      alt="Paytm Movie"
+      style="width: 30%; margin-top: 20px"
+    />
+    <div class="container">
+      <!-- Filters Section -->
+      <div class="filters">
+        <h2>Filters</h2>
+        <div class="filter-option">
+          <h3>Languages</h3>
+          <label
+            ><input type="radio" name="language" value="Hindi" /> Hindi</label
+          ><br />
+          <label
+            ><input type="radio" name="language" value="Telgu" /> Telgu</label
+          ><br />
+          <label
+            ><input type="radio" name="language" value="English" />
+            English</label
+          ><br />
+          <!-- Add more language options here -->
+        </div>
+        <div class="filter-option">
+          <h3>Sort By</h3>
+          <label
+            ><input type="radio" name="sort" value="popularity" />
+            Popularity</label
+          ><br />
+          <label
+            ><input type="radio" name="sort" value="release_date" /> Release
+            Date</label
+          ><br />
+          <label><input type="radio" name="sort" value="rating" /> Rating</label
+          ><br />
+        </div>
+        <div class="filter-option">
+          <h3>Genres</h3>
+          <label
+            ><input type="radio" name="genre" value="action" /> Action</label
+          ><br />
+          <label
+            ><input type="radio" name="genre" value="comedy" /> Comedy</label
+          ><br />
+          <label><input type="radio" name="genre" value="drama" /> Drama</label
+          ><br />
+          <!-- Add more genre options here -->
+        </div>
+      </div>
+
+      <!-- Movie Containers -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="/images/family.png" alt="Movie 1" />
+          <h2 class="movie-title">Movie 1</h2>
+          <button class="book-btn">Book Now</button>
+        </div>
+        <div class="movie-card">
+          <img src="/images/bade.png" alt="Movie 2" />
+          <h2 class="movie-title">Movie 2</h2>
+          <button class="book-btn">Book Now</button>
+        </div>
+        <div class="movie-card">
+          <img src="/images/tillu.png" alt="Movie 3" />
+          <h2 class="movie-title">Movie 3</h2>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

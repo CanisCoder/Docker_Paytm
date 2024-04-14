@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paytm Recharge (Demo)</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fbfbfb;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        color: #fff;
+      }
+
+      .header img {
+        width: 100px;
+        margin-top: 20px;
+        height: auto;
+        margin-right: 1rem;
+      }
+
+      .container {
+        padding: 1.5rem;
+        width: 90%;
+        margin-top: 30px;
+        max-width: 400px;
+        border-radius: 5px;
+        background-color: #0a178b;
+        box-shadow: 4px 4px 4px 4px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .number-section,
+      .plan-section {
+        margin-bottom: 1rem;
+      }
+
+      .number-section h2,
+      .plan-section h2 {
+        margin-bottom: 0.5rem;
+        color: antiquewhite;
+      }
+
+      #mobile-number,
+      #plan-options {
+        padding: 0.5rem;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      #recharge-btn {
+        background-color: #007fff;
+        color: #fff;
+        padding: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="/images/paytmrech.png"
+        alt="Paytm Logo"
+        style="width: 400px; height: auto; align-items: center"
+      />
+    </header>
+    <main class="container" shadow="box-shadow:50px 50px">
+      <section class="number-section">
+        <h2>Enter Mobile Number</h2>
+        <input
+          type="tel"
+          id="mobile-number"
+          placeholder="10-digit mobile number"
+        />
+      </section>
+      <section class="plan-section">
+        <h2>Select Plan &#8377;</h2>
+        <select id="plan-options">
+          <option value="">Choose a plan</option>
+          <option value="prepaid100">₹100 Prepaid Recharge</option>
+          <option value="postpaid200">₹200 Postpaid Bill Payment</option>
+        </select>
+      </section>
+      <button id="recharge-btn">Recharge &#129297;</button>
+      <h3>Paytm &copy;</h3>
+    </main>
+    <script>
+      document
+        .getElementById("recharge-btn")
+        .addEventListener("click", function () {
+          alert(
+            "Redirecting to secure payment page (not functional in this demo)"
+          );
+        });
+    </script>
+  </body>
+</html>
