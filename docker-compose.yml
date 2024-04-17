@@ -1,19 +1,19 @@
 version: '3.8'
 services:
   movies:
-    image: anandock/paytmmovies:latest
+    image: anandock/paytmtrain:latest
     ports:
       - "8081:80"
     deploy:
       replicas: 3
   train:
-    image: anandock/paytmtrain:latest
+    image: anandock/paytmrecharge:latest
     ports:
       - "8082:80"
     deploy:
       replicas: 3
   recharge:
-    image: anandock/paytmrecharge:latest
+    image: anandock/paytmmovie:latest
     ports:
       - "8084:80"
     deploy:
