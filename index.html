@@ -1,133 +1,170 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paytm Train Booking</title>
+    <title>Paytm Movie UI</title>
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
+      /* CSS Styles */
       body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding-top: 20px;
-        padding: 50px;
-        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 20px;
+      }
+
+      .filters {
+        background-color: #19a3d1;
+        padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
 
-      h1 {
-        text-align: center;
-        margin-bottom: 20px;
+      .movie-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
       }
 
-      .form-group {
-        margin-bottom: 15px;
+      .movie-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
       }
 
-      label {
-        font-weight: bold;
+      .movie-card:hover {
+        transform: scale(1.05);
       }
 
-      input[type="text"],
-      input[type="date"],
-      select {
+      .movie-card img {
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 10px;
       }
 
-      button {
-        width: 100%;
-        padding: 10px;
+      .movie-title {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      .book-btn {
         background-color: #007bff;
         color: #fff;
         border: none;
+        padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
-        font-size: 16px;
+        transition: background-color 0.3s ease;
+        align-self: flex-end;
+        margin-top: auto;
       }
 
-      button:hover {
+      .book-btn:hover {
         background-color: #0056b3;
       }
 
-      .additional-services {
-        margin-top: 20px;
-        text-align: center;
+      .filters h3 {
+        margin-bottom: 10px;
       }
 
-      .additional-services a {
-        display: inline-block;
-        margin: 5px;
-        padding: 8px 15px;
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
+      .filter-option {
+        margin-bottom: 10px;
       }
 
-      .additional-services a:hover {
-        background-color: #0056b3;
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        .movie-container {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
+    <img
+      src="https://github.com/CanisCoder/Docker_Paytm/blob/master/images/paytmmovie.png?raw=true"
+      alt="Paytm Movie"
+      style="width: 30%; margin-top: 20px"
+    />
     <div class="container">
-      <img
-        src="https://github.com/CanisCoder/Docker_Paytm/blob/master/images/paytmtrain.png?raw=true"
-        alt="paytm train"
-        style="width: 70%; margin-bottom: 20px"
-      />
-      <form id="bookingForm">
-        <div class="form-group">
-          <label for="from">From:</label>
-          <input type="text" id="from" name="from" required />
+      <!-- Filters Section -->
+      <div class="filters">
+        <h2>Filters</h2>
+        <div class="filter-option">
+          <h3>Languages</h3>
+          <label
+            ><input type="radio" name="language" value="Hindi" /> Hindi</label
+          ><br />
+          <label
+            ><input type="radio" name="language" value="Telgu" /> Telgu</label
+          ><br />
+          <label
+            ><input type="radio" name="language" value="English" />
+            English</label
+          ><br />
+          <!-- Add more language options here -->
         </div>
-        <div class="form-group">
-          <label for="to">To:</label>
-          <input type="text" id="to" name="to" required />
+        <div class="filter-option">
+          <h3>Sort By</h3>
+          <label
+            ><input type="radio" name="sort" value="popularity" />
+            Popularity</label
+          ><br />
+          <label
+            ><input type="radio" name="sort" value="release_date" /> Release
+            Date</label
+          ><br />
+          <label><input type="radio" name="sort" value="rating" /> Rating</label
+          ><br />
         </div>
-        <div class="form-group">
-          <label for="departureDate">Departure Date:</label>
-          <input type="date" id="departureDate" name="departureDate" required />
+        <div class="filter-option">
+          <h3>Genres</h3>
+          <label
+            ><input type="radio" name="genre" value="action" /> Action</label
+          ><br />
+          <label
+            ><input type="radio" name="genre" value="comedy" /> Comedy</label
+          ><br />
+          <label><input type="radio" name="genre" value="drama" /> Drama</label
+          ><br />
+          <!-- Add more genre options here -->
         </div>
-        <div class="form-group">
-          <label for="class">Class:</label>
-          <select id="class" name="class">
-            <option value="ac">AC</option>
-            <option value="non-ac">Non-AC</option>
-          </select>
+      </div>
+
+      <!-- Movie Containers -->
+      <div class="movie-container">
+        <div class="movie-card">
+          <img src="https://github.com/CanisCoder/Docker_Paytm/blob/master/images/family.png?raw=true" alt="Movie 1" />
+          <h2 class="movie-title">Movie 1</h2>
+          <button class="book-btn">Book Now</button>
         </div>
-        <button type="submit">Search Train</button>
-      </form>
-      <div class="additional-services">
-        <a href="#">My Booking</a>
-        <a href="#">PNR Status</a>
-        <a href="#">Train Status</a>
-        <a href="#">Order Food</a>
+        <div class="movie-card">
+          <img src="https://github.com/CanisCoder/Docker_Paytm/blob/master/images/bade.png?raw=true" alt="Movie 2" />
+          <h2 class="movie-title">Movie 2</h2>
+          <button class="book-btn">Book Now</button>
+        </div>
+        <div class="movie-card">
+          <img src="https://github.com/CanisCoder/Docker_Paytm/blob/master/images/tillu.png?raw=true" alt="Movie 3" />
+          <h2 class="movie-title">Movie 3</h2>
+          <button class="book-btn">Book Now</button>
+        </div>
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById("bookingForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          console.log("Form submitted!");
-        });
-    </script>
   </body>
 </html>
